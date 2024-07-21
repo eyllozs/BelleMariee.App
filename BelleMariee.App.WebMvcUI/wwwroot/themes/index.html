@@ -1,0 +1,502 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashion | Teamplate</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/theme/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/theme/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/theme/assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="~/theme/assets/css/gijgo.css">
+    <link rel="stylesheet" href="~/theme/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/animated-headline.css">
+    <link rel="stylesheet" href="~/theme/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/theme/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/theme/assets/css/slick.css">
+    <link rel="stylesheet" href="theme/assets/css/style.css">
+
+    <style>
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .custom-video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            position: relative;
+            width: 22%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            perspective: 1000px;
+            display: inline-block;
+            margin: 15px;
+            text-align: center;
+        }
+
+            .card img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .card:hover .inner {
+                transform: rotateY(180deg);
+            }
+
+        .inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* Ön ve arka yüzlerin dönme sırasında görünürlüğü */
+        }
+
+        .front {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #cdcdc1;
+            transform: rotateY(0deg);
+            z-index: 2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #F6F5F2;
+            color: dimgrey;
+            transform: rotateY(180deg);
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .back a {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: slategrey;
+                color: black;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+
+                .back a:hover {
+                    background-color: #e0e0c6;
+                }
+    </style>
+</head>
+
+<body class="full-wrapper">
+    <!-- Video Konteyneri -->
+    <div class="video-container">
+        <video class="custom-video" autoplay muted loop>
+            <source src="~/images/gelinvideo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <br />
+    <br>
+
+
+    <!-- Preloader Start-->
+    <header>
+        <!-- Kartlar Konteyneri -->
+        <div class="container">
+            <div class="card">
+                <div class="inner">
+                    <div class="front">
+                        <img src="~/images/ggelin.jpg" alt="Fotoğraf 1">
+
+                    </div>
+                    <div class="back">
+                        <h3>GELİNLİK</h3>
+                        <p>Eşsiz gelinliklere ulaşmak için lütfen tıklayınız.</p>
+                        <a href="Product/Gow">Alışverişe Başla</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="inner">
+                    <div class="front">
+                        <img src="~/images/a.jpg" alt="Fotoğraf 2">
+
+                    </div>
+                    <div class="back">
+                        <h3>AFTER PARTY</h3>
+                        <p>En eğlenceli after party gelinkleri için tıklayınız.</p>
+                        <a href="Product/Index/1">Alışverişe Başla</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="inner">
+                    <div class="front">
+                        <img src="~/images/ayakkabılar.jpg" alt="Fotoğraf 3">
+
+                    </div>
+                    <div class="back">
+                        <h3>AYAKKABI</h3>
+                        <p>Popüler ayakabılar için tıklayınız.</p>
+                        <a href="Product/Shoe">Alışverişe Başla</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="inner">
+                    <div class="front">
+                        <img src="~/images/gcicekjpg.jpg" alt="Fotoğraf 4">
+
+                    </div>
+                    <div class="back">
+                        <h3>AKSESUAR</h3>
+                        <p>Gelin çiçeği, duvak, gelin tacı için tıklayınız.</p>
+                        <a href="Product/Accessory">Alışverişe Başla</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Mobile Menu -->
+        <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <!-- header end -->
+    <main>
+        <!--? Hero Area Start-->
+        <div class="container-fluid">
+            <div class="slider-area">
+                <!-- Mobile Device Show Menu-->
+                <div class="header-right2 d-flex align-items-center">
+                    <!-- Social -->
+                    <div class="header-social  d-block d-md-none">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="search d-block d-md-none">
+                        <ul class="d-flex align-items-center">
+                            <li class="mr-15">
+                                <div class="nav-search search-switch">
+                                    <i class="ti-search"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-stor">
+                                    <img src="/images/a.jpg" alt="">
+                                    <span>0</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /End mobile  Menu-->
+
+                <div class="slider-active dot-style">
+                    <!-- Single -->
+                    <div class="single-slider slider-bg1 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+
+
+                                        <h1>Özel <br />dikim<br /> için <br />hemen <br />randevu al! </h1>
+                                        <a href="shop.html" class="btn">Randevu Al</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="single-slider slider-bg2 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>fashion<br>changing<br>always</h1>
+                                        <a href="shop.html" class="btn">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="single-slider slider-bg3 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>fashion<br>changing<br>always</h1>
+                                        <a href="shop.html" class="btn">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Hero -->
+        <!--? Popular Items Start -->
+        <div class="popular-items pt-50">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="popular-img">
+                                <img src="/images/kurdele.jpg" alt="">
+                                <div class="img-cap">
+                                    <span>Glasses</span>
+                                </div>
+                                <div class="favorit-items">
+                                    <a href="shop.html" class="btn">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="popular-img">
+                                <img src="/images/kurdele.jpg" alt="">
+                                <div class="img-cap">
+                                    <span>Watches</span>
+                                </div>
+                                <div class="favorit-items">
+                                    <a href="shop.html" class="btn">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="popular-img">
+                                <img src="/images/kurdele.jpg" alt="">
+                                <div class="img-cap">
+                                    <span>Jackets</span>
+                                </div>
+                                <div class="favorit-items">
+                                    <a href="shop.html" class="btn">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                            <div class="popular-img">
+                                <img src="/images/kurdele.jpg" alt="">
+                                <div class="img-cap">
+                                    <span>Clothes</span>
+                                </div>
+                                <div class="favorit-items">
+                                    <a href="shop.html" class="btn">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Popular Items End -->
+        <!--? New Arrival Start -->
+        <!--? New Arrival End -->
+        <!--? collection -->
+        <section class="collection section-bg2 section-padding30 section-over1 ml-15 mr-15" data-background="/images/a.jpg">
+            <div class="container-fluid"></div>
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-9">
+                    <div class="single-question text-center">
+                        <h2 class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">collection houses our first-ever</h2>
+                        <a href="about.html" class="btn class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">About Us</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- End collection -->
+        <!--? Popular Locations Start 01-->
+        <div class="popular-product pt-50">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-product mb-50">
+                            <div class="location-img">
+                                <img src="/images/di.gif" alt="">
+                            </div>
+                            <div class="location-details">
+                                <p><a href="product_details.html">Kişiye özel dikim için hemen randevu al! </a></p>
+                                <a href="product_details.html" class="btn">Randevu Al</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-product mb-50">
+                            <div class="location-img">
+                                <img src="/images/askı.jpg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Popular Locations End -->
+        <!--? Services Area Start -->
+        <div class="categories-area section-padding40 gray-bg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="cat-icon">
+                                <img src="/images/askılıklar.jpg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>Belle Marieee</h5>
+                                <p>Tasarım Gelinlikler</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="cat-icon">
+                                <img src="/images/ayna.jpg" alt="">
+
+                            </div>
+                            <div class="cat-cap">
+                                <h5>Belle Marieee</h5>
+                                <p>Mağazamızı ziyaret edin.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="cat-icon">
+                                <img src="/images/duvaklar.jpg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>Belle Marieee</h5>
+                                <p>Duvak çeşitlerimiz </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div class="cat-icon">
+                                <img src="/images/kurdele.jpg" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5>Belle Marieee</h5>
+                                <p>Rahat Ayakkabılar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--? Services Area End -->
+    </main>
+    <!--? Search model Begin -->
+    <div class="search-model-box">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-btn">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Searching key.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./themes/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./theme/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./theme/assets/js/popper.min.js"></script>
+    <script src="./theme/assets/js/bootstrap.min.js"></script>
+
+    <!-- Slick-slider , Owl-Carousel ,slick-nav -->
+    <script src="./theme/assets/js/owl.carousel.min.js"></script>
+    <script src="./theme/assets/js/slick.min.js"></script>
+    <script src="./theme/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin, Date Picker -->
+    <script src="./theme/assets/js/wow.min.js"></script>
+    <script src="./theme/assets/js/animated.headline.js"></script>
+    <script src="./theme/assets/js/jquery.magnific-popup.js"></script>
+    <script src="./theme/assets/js/gijgo.min.js"></script>
+
+    <!-- Nice-select, sticky,Progress -->
+    <script src="./theme/assets/js/jquery.nice-select.min.js"></script>
+    <script src="./theme/assets/js/jquery.sticky.js"></script>
+    <script src="./theme/assets/js/jquery.barfiller.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="./theme/assets/js/jquery.counterup.min.js"></script>
+    <script src="./theme/assets/js/waypoints.min.js"></script>
+    <script src="./theme/assets/js/jquery.countdown.min.js"></script>
+    <script src="./theme/assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="./theme/assets/js/contact.js"></script>
+    <script src="./theme/assets/js/jquery.form.js"></script>
+    <script src="./theme/assets/js/jquery.validate.min.js"></script>
+    <script src="./theme/assets/js/mail-script.js"></script>
+    <script src="./theme/assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./theme/assets/js/plugins.js"></script>
+    <script src="./theme/assets/js/main.js"></script>
+
+</body>
+</html>

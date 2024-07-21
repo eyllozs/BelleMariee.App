@@ -1,0 +1,222 @@
+﻿@model BelleMariee.App.Entity.ViewModels.ProductViewModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutProduct.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Detay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .product-detail {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            padding-bottom:200px;
+            padding-right: 80px;
+            
+        }
+
+        .left-section {
+            display: flex;
+            align-items: flex-start;
+            margin-right:20px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .thumbnail {
+            width: 148px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+            .thumbnail:last-child {
+                margin-bottom: 0;
+            }
+
+            .thumbnail:hover {
+                transform: scale(1.05);
+            }
+
+        .main-image-container img {
+            width: 450px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+            .main-image-container img:hover {
+                transform: scale(1.05);
+            }
+
+        .right-section {
+            margin-left: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+            .add-to-cart:hover {
+                background-color: #5a6268;
+            }
+
+        .size-options {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .size-option {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+            .size-option input[type="radio"] {
+                display: none;
+            }
+
+            .size-option label {
+                display: inline-block;
+                background-color: #e9e9e9;
+                padding: 10px 20px;
+                border: 2px solid #ddd;
+                border-radius: 40px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .size-option input[type="radio"]:checked + label {
+                background-color: #6c757d;
+                color: #fff;
+                border-color: #6c757d;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .quantity-input {
+            width: 60px; /* Reduced width */
+            padding: 5px; /* Added padding */
+            font-size: 14px; /* Adjusted font size */
+            border: 2px solid #ddd; /* Border styling */
+            border-radius: 10px; /* Border radius for rounded corners */
+            text-align: center; /* Center align the text */
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            background-color: #e9e9e9;
+        }
+
+            .quantity-input:hover {
+                border-color: #6c757d;
+            }
+
+            .quantity-input:focus {
+                outline: none;
+                border-color: #6c757d;
+                box-shadow: 0 0 5px rgba(108, 117, 125, 0.5);
+            }
+    </style>
+</head>
+<body>
+    <div class="product-detail">
+        <div class="left-section">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="@Model.ImageUrl">
+                <img class="thumbnail" src="@Model.ImageUrl2">
+                <img class="thumbnail" src="@Model.ImageUrl3">
+            </div>
+            <div class="main-image-container mt-1">
+                <img id="main-image" src="@Model.ImageUrl" alt="Gelinlik">
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>@Model.Name</h1>
+            <p>@Model.Description</p>
+            <div class="price">Fiyat: @string.Format("{0:C2}", @Model.Price)</div>
+
+            <form asp-controller="Sepet" asp-action="Ekle" method="get" onsubmit="return validateForm()">
+                <input type="hidden" name="Id" value="@Model.Id" />
+                <div class="form-group">
+                    <label for="size">Beden:</label>
+                    <div class="size-options">
+                        @foreach (var size in ViewBag.AvailableSizes as List<string>)
+                        {
+                            <div class="size-option">
+                                <input type="radio" id="size-@size" name="Size" value="@size">
+                                <label for="size-@size">@size</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Adet:</label>
+                    <input class="form-control quantity-input" type="number" name="Adet" value="1" min="1" max="@Model.Stock" />
+                </div>
+                <button type="submit" class="add-to-cart">
+                    Sepete At
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedSize = null;
+
+        // Thumbnail click event
+        document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function () {
+                const mainImage = document.getElementById('main-image');
+                mainImage.src = this.src;
+            });
+        });
+
+        function validateForm() {
+            const sizeSelected = document.querySelector('input[name="Size"]:checked');
+            if (!sizeSelected) {
+                alert("Lütfen bir beden seçin.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<BelleMariee.App.Entity.ViewModels.ProductViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-a.cshtml";
+}
+
+<p>
+    <a asp-action="Create" asp-controller="Home" asp-area="Admin" class="btn btn-success">Yeni Ürün</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                İsim
+            </th>
+            <th>
+                Açıklama
+            </th>
+            <th>
+                Fiyat
+            </th>
+            <th>
+                Stok
+            </th>
+            <th>
+                Resim 1
+            </th>
+            <th>
+                Resim 2
+            </th>
+            <th>
+                Resim 3
+            </th>
+            <th>
+                Beden
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductTypeId)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() > 0)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    </td>
+                    <td>
+                        <img src="@item.ImageUrl" alt="Product Image 1" style="width: 100px; height: auto;" />
+                    </td>
+                    <td>
+                        <img src="@item.ImageUrl2" alt="Product Image 2" style="width: 100px; height: auto;" />
+                    </td>
+                    <td>
+                        <img src="@item.ImageUrl3" alt="Product Image 3" style="width: 100px; height: auto;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductTypeId)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id" asp-area="Admin" class="btn btn-warning btn-sm mt-2">Edit</a>
+                        <br />
+                        <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id" asp-area="Admin" class="btn btn-danger btn-sm mt-3" onclick="return confirm('Bu ürünü silmek istediğinizden emin misiniz?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="11">
+                    <div class="alert alert-danger text-center">
+                        Kayıtlı ürün yok.
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

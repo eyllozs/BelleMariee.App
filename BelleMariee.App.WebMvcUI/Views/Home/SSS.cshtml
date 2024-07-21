@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewData["Title"] = "SSS";
+    Layout = "~/Views/Shared/_Layout-Home.cshtml";
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h2, h5 {
+            color: grey;
+        }
+
+        p {
+            color: #9e8155; /* Pudra pembe rengi */
+        }
+
+        a {
+            color: #9e8155; /* Pudra pembe rengi */
+        }
+
+        .question-button {
+            width: 100%;
+            padding: 10px 50px; /* Padding değerlerini düzelttim */
+            border: none;
+            background-color: #f8f9fa;
+            font-weight: bold;
+            font-size: 20px; /* Yazı boyutunu ayarlayabilirsiniz */
+            cursor: pointer;
+            color: grey; /* Buton metin rengi */
+        }
+
+            .question-button:focus {
+                outline: none;
+            }
+
+        .answer {
+            display: none;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+
+        .question-button.active + .answer {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <p>Alış verişinizin her aşamasında, kendinizi güvende hissedebilmeniz için en çok merak edilen konuları ve sıkça sorulan soruları size yardımcı olabilmek amacıyla aşağıda listeledik.</p>
+        <p>Farklı sorularınız için, iletişim formunu kullanabilirsiniz...</p>
+
+        <button class="question-button" type="button" data-toggle="collapse" data-target="#uyelik-hakkinda">Üyelik Hakkında</button>
+        <div id="uyelik-hakkinda" class="answer">
+            <h5>Neden üye olmalıyım?</h5>
+            <p>bellemariee.com.tr'den üye olmadan da alışveriş yapabilirsiniz ancak, bellemariee.com.tr'ye üye olduğunuzda yenilikler ve kampanyalardan öncelikli olarak haberdar olabilir, size özel kampanya ve indirimlerden yararlanabilirsiniz.</p>
+            <h5>Şifremi unuttum, ne yapmalıyım?</h5>
+            <p>"Üye Girişi" sayfasında yer alan "Şifremi unuttum" linkine tıklayarak şifrenizi güncelleyebilirsiniz.</p>
+            <h5>Üye olmadan alışveriş yapabilir miyim?</h5>
+            <p>Evet. Dilerseniz üye olmadan da siparişinizi tamamlayabilirsiniz.</p>
+        </div>
+
+        <button class="question-button" type="button" data-toggle="collapse" data-target="#siparis-hakkinda">Sipariş Hakkında</button>
+        <div id="siparis-hakkinda" class="answer">
+            <h5>Fiyatlarınıza KDV dahil mi?</h5>
+            <p>Evet. Sitemizde belirtilen ürün fiyatlarına KDV dahildir.</p>
+            <h5>Hangi ödeme yöntemlerini kullanabilirim?</h5>
+            <p>Kredi kartı, banka kartı veya havale/eft yöntemleri ile ödeme yapabilirsiniz.</p>
+            <h5>bellemariee.com.tr'den nasıl alışveriş yapabilirim?</h5>
+            <p>bellemariee.com.tr üyeliğinizi oluşturduktan veya üye girişinizi yaptıktan sonra hemen alışverişe başlayabilirsiniz. Dilerseniz ilgilendiğiniz marka veya ürünlerle ilgili arama yapabilir, veya sitemizdeki departmanlardan ilgilendiklerinizi seçerek ürünleri inceleyebilirsiniz. Beğendiğiniz ürünleri, renk ve beden seçeneklerini işaretledikten sonra sepetinize ekleyebilir, teslimat ve ödeme bilgilerini doldurarak alışverişinizi tamamlayabilirsiniz.</p>
+            <h5>Oluşturduğum siparişe ürün ekleyebilir miyim?</h5>
+            <p>bellemariee.com.tr’den verdiğiniz siparişler bize online olarak ulaşır ve ödeme işlemleriniz de sipariş oluşturma aşamasında otomatik olarak yapılır. Ödeme koşullarında değişiklik yapılamadığından, siparişinize sonradan ürün eklemeniz mümkün değildir. Ama mevcut siparişinizi iptal ederek yeni bir sipariş oluşturabilir ya da almak istediğiniz diğer ürünü ayrıca sipariş edebilirsiniz.</p>
+            <h5>Sipariş verirken nelere dikkat etmeliyim?</h5>
+            <p>bellemariee.com.tr’den verdiğiniz siparişlerin zamanında ve eksiksiz olarak adresinize gönderilebilmesi için teslimat ve fatura adresinizin doğruluğundan emin olmalısınız. Teslimat adresinizi doğru ve eksiksiz olarak yazmaya özen gösterin. Kargo şubesi olarak teslimat adresi belirtilen siparişlerin gönderimi yapılamaz. Fatura adres bilgileri, faturalama işleminden sonra değiştirilemez. Bu nedenle fatura bilgilerinizin doğruluğundan emin olmadan siparişinizi onaylamayın. Tüm gönderiler adrese ve ilgili kişiye yapılır, kargo şubesinden ürün teslimi yapılmaz.</p>
+            <h5>Sipariş verirken sayfa hata veriyor, ne yapmalıyım?</h5>
+            <p>Sipariş verirken hatayla karşılaştığınızda lütfen help@bellemariee.com.tr e-posta adresimize mail atarak ya da Bize Ulaşın sayfamızdan mesaj yazarak bizi bilgilendirin. Yazılım departmanımız sorunu en kısa sürede çözmeye çalışacaktır.</p>
+            <h5>Siparişim oluşmadı ama ödemesi alındı. Ne yapmalıyım?</h5>
+            <p>Siparişinizin onaylanma aşamasından sonra sistem size 8 rakamdan oluşan bir sipariş numarası bildirir. Bu numara sistem tarafından size bildirilmediyse ana sayfamızdaki “Üyelik” / ”Siparişlerim” sekmesinden mevcut bir siparişinizin olup olmadığını kontrol edin. Siparişinize ulaşamıyorsanız, kredi kartınızdan ödeme alınıp alınmadığına bakmanızı öneririz; çünkü bankalarla yaşanan kısa süreli bağlantı sorunları nedeniyle sistem bazen siparişinizi oluşturamayabilir. Böyle bir durumda lütfen help@bellemariee.com.tr e-posta adresimize mail atarak ya da Bize Ulaşın sayfamızdan mesaj yazarak bizi bilgilendirin. İşlemleriniz finans departmanımız tarafından kontrol edilecek ve ödeme kredi kartınıza iade edilecektir.</p>
+        </div>
+
+        <button class="question-button" type="button" data-toggle="collapse" data-target="#odeme-hakkinda">Ödeme Hakkında</button>
+        <div id="odeme-hakkinda" class="answer">
+            <h5>Kredi kartına taksit yapılıyor mu?</h5>
+            <p>bellemariee.com.tr üzerinden yapılan alışverişlerde World, Bonus, Axess, Maximum, CardFinans ve Advantage kredi kartlarına taksit imkanı bulunmaktadır.</p>
+            <h5>Ödemeyi nasıl yapacağım? Ödeme seçeneklerim nelerdir?</h5>
+            <p>Satın almak istediğiniz ürünlerin ödemesini gerçekleştirmek için aşağıdaki yöntemlerden size en uygun olanını seçebilirsiniz.</p>
+            <h5>1-Kredi Kartı ile Ödeme</h5>
+            <p>Ödeme ekranına geldiğinizde varsayılan ödeme seçeneği olarak Kredi Kartı gelecektir. Kredi kartı bilgilerinizi kartın üzerine bulunduğu şekliyle ilgili alanlara yazınız. Destekleyen bankalar için Kredi Kartı Ödemelerinde “3D Secure” olarak şifre girerek güvenli ödeme yapabilirsiniz. 3D ödeme için “3D Secure”  seçeneğini tıklayınız.</p>
+            <h5>3D Secure Nedir?</h5>
+            <p>3-D Secure, internette alışveriş işlemlerinin güvenli bir şekilde yapılabilmesi için kart kuruluşları tarafından geliştirilmiş olan bir kimlik doğrulama sistemidir.</p>
+            <h5>3D Secure Neden Güvenlidir?</h5>
+            <p>3D Secure sisteminde, sanal ödeme işlemi gerçekleşirken, banka tarafından kart sahibine sadece kendisinin bildiği ödeme şifresi sorulmakta ve kart sahibinin kimliği doğrulanmaktadır. Bu sayede kredi kartlarınızın yetkisiz kişiler tarafından internet ortamında kullanması engellenmektedir.</p>
+            <h5>3D Secure ile nasıl alışveriş yapabilirim?</h5>
+            <p>Sipariş onayla butonuna tıkladığınızda, kredi kartına ilişkin işlem yapılacak bankaya göre form gelecektir. Kullanılan kredi kartı 3D Secure sistemine henüz kayıt edilmemiş ise “Aktivasyon Formu” gelir. Bilgileriniz bankadan doğrulandığı takdirde siparişiniz onaylanır.</p>
+            <h5>DİKKAT: 3D Secure sayfasının açılması için Pop-Up engelleyicilerinizin kapalı olması gerekmektedir.</h5>
+            <h5>2- Havale/EFT Ödeme</h5>
+            <p>
+                Garanti Bankası<br>
+                Hesap Sahibi : BELLE MARİEE SANAYİ VE TİC. A.Ş.<br>
+                Hesap Numarası : 6278136<br>
+                Şube Kodu : 448<br>
+                IBAN : TR77 0006 2000 4480 0006 2781 36
+            </p>
+            <p>DİKKAT: Havale/EFT işleminizi gerçekleştirirken, dekont açıklama kısmına mutlaka sipariş numaranızı yazmayı unutmayınız.</p>
+        </div>
+
+        <button class="question-button" type="button" data-toggle="collapse" data-target="#iade-hakkinda">İade Hakkında</button>
+        <div id="iade-hakkinda" class="answer">
+            <h5>Ürünü nasıl iade edebilirim?</h5>
+            <p>bellemariee.com.tr olarak siparişinizi teslim aldığınız tarihten itibaren 30 gün içinde ürünü kullanılmamış, orijinal kutusu ve ambalajı zarar görmemiş, tüm aksesuarları, kullanım kılavuzu ve varsa hediyeleri ile birlikte faturanızın arka yüzündeki formu doldurarak iade edebilirsiniz. İade gönderiminizi gerçekleştirmeden önce bellemariee.com.tr müşteri hizmetlerine bilgi vermeniz gerekmektedir.</p>
+            <h5>İade süresi kaç gündür?</h5>
+            <p>İade süresi teslim tarihinden itibaren 30 gündür.</p>
+            <h5>İade koşulları nelerdir?</h5>
+            <p>İade edilecek ürünlerin kullanılmamış, orijinal kutusu ve ambalajı zarar görmemiş olması gerekmektedir. Ürünlerin tüm aksesuarları, kullanım kılavuzu ve varsa hediyeleri ile birlikte gönderilmesi gerekmektedir.</p>
+            <h5>İade kargo ücretini kim öder?</h5>
+            <p>İade kargo ücreti müşteriye aittir.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".question-button").click(function () {
+                $(this).toggleClass("active");
+                $(this).next(".answer").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>

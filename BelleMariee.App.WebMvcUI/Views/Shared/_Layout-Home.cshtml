@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BelleMariee</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <style>
+        .navbar {
+            background-color: #CFBBFF;
+            !important; /* Navbar background color */
+            margin-bottom: 0;
+            !important; /* Remove margin bottom from navbar */
+        }
+
+            .navbar .navbar-brand, .navbar .nav-link {
+                color: #696868;
+                !important; /* Navbar text color */
+            }
+
+                .navbar .navbar-brand img {
+                    height: 80px;
+                    !important; /* Increase logo size */
+                }
+
+                .navbar .navbar-brand .brand-text {
+                    font-family: 'Mistrully', sans-serif;
+                    !important; /* Apply Mistrully font */
+                    font-size: 1.5em;
+                    !important; /* Adjust font size as needed */
+                }
+
+
+        .footer {
+            background-color: #CFBBFF; /* Arka plan rengini ayarlayabilirsin */
+        }
+
+            .footer h5 {
+                font-weight: bold;
+                color: black; /* Başlık rengi */
+            }
+
+            .footer a {
+                color: black; /* Bağlantı rengi */
+                text-decoration: none;
+            }
+
+
+        .logo-footer {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-info {
+            margin-bottom: 15px; /* Alt alta gelen bilgilerin arasında boşluk bırakır */
+            display: flex;
+            align-items: center;
+        }
+
+            .contact-info svg {
+                margin-right: 5px; /* İkon ile metin arasında boşluk bırakır */
+                height: auto;
+            }
+
+        .no-underline {
+            text-decoration: none;
+        }
+
+        .dropdown-menu {
+            background-color: #CFBBFF !important; /* Gri renge ayarlayın */
+            border-radius: 15px !important; /* Köşeleri yuvarlatın */
+            /*  border: 1px solid #ddd; /* Hafif bir sınır ekleyin / */ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            / Hafif bir gölge ekleyin */ padding: 10px; /* İç boşluk ekleyin */
+        }
+
+        .dropdown-item {
+            border-radius: 10px; /* Öğelerin köşelerini yuvarlatın */
+
+            margin-bottom: 5px; /* Öğeler arasına boşluk ekleyin */
+        }
+
+            .dropdown-item:hover {
+                background-color: #CFBBFF; /* Hover rengi */
+                color: #000; /* Hover sırasında yazı rengi */
+            }
+
+        }
+    </style>
+</head>
+<body style="margin:0;">
+    <header>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/log.png" alt="Belle Mariee Logo">
+
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">AnaSayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index">Tüm Ürünler</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Gelinlikler
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Gow">Tüm Gelinlikler</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="2">A Kesim Gelinlikler</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="1">After Party</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="3">Balık Model Gelinlikler</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="4">Helen Gelinlikler</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="5">Modern Gelinlikler</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="6">Nikah Elbiseleri</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="7">Prenses Model Gelinlikler</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="8">Uzun Kollu Gelinlikler</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Aksesuarlar
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Accessory">Tüm Aksesuarlar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="9">Gelin Buketi</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="10">Duvak</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="11">Gelin Tacı</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Shoe">Ayakkabı</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="OzelDikim">Özel Dikim</a>
+                        </li>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">İletişim</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="col-md-2 top-forms text-center mt-lg-1 mt-md-1 mt-0">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <span>Hoşgeldin @User.Identity.Name</span>
+                            <span>
+                                <a asp-action="Logout" asp-controller="Account" class="no-underline">
+                                    <i class="far fa-user"></i> Çıkış
+                                </a>
+                            </span>
+                        }
+                        else
+                        {
+
+                            <span class="mx-lg-2 mx-md-2  mx-1">
+                                <a asp-action="Login" asp-controller="Account" class="no-underline">
+                                    <i class="fas fa-lock"></i> Kullanıcı Girişi
+                                </a>
+                            </span>
+                        }
+                    </div>
+
+
+
+
+                    <div id="sepet" class="me-2 ">
+                        <a class="text-secondary text-decoration-none" asp-action="Index" asp-controller="Sepet">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+                                <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+                            </svg>
+
+                            @if (TempData["ToplamAdet"] != null)
+                            {
+                                @TempData["ToplamAdet"]
+                            }
+
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row py-4">
+                <!-- Sol Üst Kısım: Logo -->
+                <div class="col-md-3 d-flex align-items-center">
+                    <img src="~/images/log.png" alt="Belle Mariee Logo" class="logo-footer" height="50">
+                </div>
+
+                <!-- MÜŞTERİ HİZMETLERİ Bölümü -->
+                <div class="col-md-3">
+                    <h5>MÜŞTERİ HİZMETLERİ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("SSS", "Home")">S.S.S</a></li>
+                        <li><a href="@Url.Action("IadeVeDegisim", "Home")">İADE VE DEĞİŞİM</a></li>
+                        <li><a href="@Url.Action("Siparis","Home")">SİPARİŞ VE TESLİMAT</a></li>
+                    </ul>
+                </div>
+
+                <!-- ŞİRKET Bölümü -->
+                <div class="col-md-3">
+                    <h5>ŞİRKET</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("Sartlar", "Home")">ŞARTLAR VE KOŞULLAR</a></li>
+                        <li><a href="@Url.Action("Gizlilik", "Home")">GİZLİLİK POLİTİKASI</a></li>
+                        <li><a href="@Url.Action("KVKK", "Home")">KVKK</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sağ Üst Kısım: İletişim Bilgileri ve Instagram -->
+                <div class="col-md-3 d-flex flex-column align-items-end">
+                    <!-- Telefon ve Adres Bilgileri -->
+                    <div class="text-end mb-2">
+                        <div class="contact-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg>
+                            <span class="phone-number">+90 123 456 7890</span>
+                        </div>
+                        <div class="contact-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
+                                <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.707L8 2.207 1.354 8.853a.5.5 0 1 1-.708-.707z" />
+                                <path d="m14 9.293-6-6-6 6V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5zm-6-.811c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018" />
+                            </svg>
+                            <span class="address">Örnek Mah. No: 1, İSTANBUL</span>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="mb-2">
+                        <a href="https://www.instagram.com/bellemariee/" target="_blank" class="btn btn-outline-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.484.275-.843.039-1.096.047-3.232.047s-2.389-.008-3.232-.047c-.78-.035-1.203-.166-1.485-.275a2.5 2.5 0 0 1-.919-.599c-.28-.28-.453-.546-.598-.92a4.21 4.21 0 0 1-.275-1.484c-.039-.843-.047-1.096-.047-3.232s.008-2.389.047-3.232c.035-.78.166-1.203.275-1.485a2.5 2.5 0 0 1 .599-.919c.28-.28.546-.453.92-.598.28-.11.704-.24 1.484-.275.843-.039 1.096-.047 3.232-.047zm4.054 1.267a.5.5 0 0 0-.5.5v3.436a.5.5 0 0 0 .5.5h3.435a.5.5 0 0 0 .5-.5V4.21a.5.5 0 0 0-.5-.5h-3.435z" />
+                                <path d="M8 4.942a3.058 3.058 0 0 0-3.056 3.056A3.058 3.058 0 0 0 8 11.054a3.058 3.058 0 0 0 3.056-3.056A3.058 3.058 0 0 0 8 4.942zm0 5.232a2.178 2.178 0 0 1-2.176-2.176A2.178 2.178 0 0 1 8 5.82a2.178 2.178 0 0 1 2.176 2.176A2.178 2.178 0 0 1 8 10.174z" />
+                                <circle cx="12.5" cy="3.5" r=".5" />
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+    </footer>
+    <script>
+        import Navbar from './_Layout-Home';
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

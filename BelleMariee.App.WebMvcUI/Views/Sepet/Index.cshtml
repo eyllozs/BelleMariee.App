@@ -1,0 +1,130 @@
+﻿@using BelleMariee.App.Service.Models
+@model List<SepetDetay>
+@{
+    ViewData["Title"] = "Sepet";
+    Layout = "~/Views/Shared/_LayoutProduct.cshtml";
+}
+
+<style>
+    .btn-pink {
+        background-color: #CCCCFF; /* Pink color */
+        color: white;
+    }
+
+        .btn-pink:hover, .btn-pink:focus {
+            background-color: #AAAAFF; /* Darker pink color */
+            color: white;
+        }
+
+    .btn-purple {
+        background-color: #CCCCFF; /* Purple color */
+        color: white;
+    }
+
+        .btn-purple:hover, .btn-purple:focus {
+            background-color: #AAAAFF; /* Darker purple color */
+            color: white;
+        }
+
+    .btn-primary {
+        background-color: #CCCCFF; /* Custom color */
+        border-color: #CCCCFF; /* Border color */
+        color: white;
+    }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: #AAAAFF; /* Darker shade */
+            border-color: #AAAAFF; /* Border color */
+            color: white;
+        }
+
+    .btn-secondary {
+        background-color: #CCCCFF; /* Custom color */
+        border-color: #CCCCFF; /* Border color */
+        color: white;
+    }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background-color: #AAAAFF; /* Darker shade */
+            border-color: #AAAAFF; /* Border color */
+            color: white;
+        }
+
+    .btn-grey {
+        background-color: #CCCCFF; /* Custom color */
+        border-color: #CCCCFF; /* Border color */
+        color: white;
+    }
+
+        .btn-grey:hover, .btn-grey:focus {
+            background-color: #AAAAFF; /* Darker shade */
+            border-color: #AAAAFF; /* Border color */
+            color: white;
+        }
+</style>
+
+<h2 class="text-center my-4">Sepetim</h2>
+@if (Model.Count > 0)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                @foreach (var siparis in Model)
+                {
+                    <div class="card mb-4 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="@siparis.ProductImageUrl" class="img-thumbnail" alt="@siparis.ProductName" style="max-width: 100%; max-height: 200px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">@siparis.ProductName</h5>
+                                    <p class="card-text">
+                                        <strong>Birim Fiyat:</strong> @siparis.ProductPrice <br />
+                                        <strong>Adet:</strong> @siparis.ProductQuantity <br />
+                                        <strong>Tutar:</strong> @(siparis.ProductQuantity * siparis.ProductPrice)
+                                    </p>
+                                    <a asp-controller="Sepet" asp-action="Sil" asp-route-id="@siparis.ProductId" class="btn btn-pink">
+                                        <i class="bi bi-trash3"></i> Kaldır
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Sipariş Özeti</h5>
+                        <p class="card-text">
+                            <strong>Toplam Adet:</strong>
+                            @if (TempData["ToplamAdet"] != null)
+                            {
+                                @TempData["ToplamAdet"]
+                            }
+                            <br />
+                            <strong>Toplam Tutar:</strong>
+                            @if (TempData["ToplamTutar"] != null)
+                            {
+                                @TempData["ToplamTutar"]
+                            }
+                        </p>
+                        <a class="btn btn-primary w-100 mb-2" asp-controller="Customer" asp-action="Login">Sepeti Onayla</a>
+                        <a class="btn btn-secondary w-100" asp-controller="Sepet" asp-action="SepetSil">Tümünü Sil</a>
+                    </div>
+                </div>
+                <a class="btn btn-purple w-100" asp-controller="Product" asp-action="Index">Alışverişe Devam</a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-primary text-center" role="alert">
+        <strong>Sepetiniz boş!</strong>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-grey" asp-controller="Product" asp-action="Index">Alışverişe Devam</a>
+    </div>
+}
