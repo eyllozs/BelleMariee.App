@@ -50,7 +50,7 @@ public class CustomerController : Controller
             }
             else
             {
-                HttpContext.Session.SetJson("user", customer); // Store the logged-in customer's information in the session.
+                HttpContext.Session.SetJson("user", customer);
                 return RedirectToAction("ConfirmAddress");
             }
         }
@@ -100,7 +100,7 @@ public class CustomerController : Controller
             return RedirectToAction("Login");
         }
 
-        // Fetch cart details from the session
+
         var sepet = HttpContext.Session.GetJson<List<SepetDetay>>("sepet");
         SepetDetay sd = new SepetDetay();
         int toplamAdet = sd.ToplamAdet(sepet);
@@ -136,7 +136,7 @@ public class CustomerController : Controller
         var existingCustomer = await _customerService.GetById(customer.Id);
         if (existingCustomer == null)
         {
-            // Ideally, customer should exist at this point, if not, handle appropriately
+            
             return RedirectToAction("Login");
         }
 
