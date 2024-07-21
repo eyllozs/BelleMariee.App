@@ -160,7 +160,7 @@ public class CustomerController : Controller
 
         if (await _productSaleDetailsService.AddRange(sepet, satisId))
         {
-            TempData["mesaj"] = "Satış işlemi başarıyla tamamlandı.";
+            TempData["mesaj"] = "";
             HttpContext.Session.Remove("sepet");
         }
         else
