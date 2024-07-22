@@ -162,9 +162,9 @@ body {
 			<form asp-action="Create" class="login">
 				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 				<div class="login__field">
-					<h4>Customer Register</h4>
+					<h4>Müşteri Kayıt</h4>
 					<br /><br />
-					<label asp-for="Name" class="control-label login__label">Name</label>
+					<label asp-for="Name" class="control-label login__label">İsim</label>
 					<div class="login__input-container">
 						<i class="login__icon fas fa-user"></i>
 						<input asp-for="Name" class="login__input form-control" />
@@ -180,7 +180,7 @@ body {
 					</div>
 				</div>
 				<div class="login__field">
-					<label asp-for="Password" class="control-label login__label">Password</label>
+					<label asp-for="Password" class="control-label login__label">Şifre</label>
 					<div class="login__input-container">
 						<i class="login__icon fas fa-lock"></i>
 						<input asp-for="Password" type="password" class="login__input form-control" />
@@ -188,7 +188,7 @@ body {
 					</div>
 				</div>
 				<div class="login__field">
-					<label asp-for="Phone" class="control-label login__label">Phone</label>
+					<label asp-for="Phone" class="control-label login__label">Telefon</label>
 					<div class="login__input-container">
 						<i class="login__icon fas fa-phone"></i>
 						<input asp-for="Phone" class="login__input form-control" />
@@ -196,7 +196,7 @@ body {
 					</div>
 				</div>
 				<div class="login__field">
-					<label asp-for="Address" class="control-label login__label">Address</label>
+					<label asp-for="Address" class="control-label login__label">Adres</label>
 					<div class="login__input-container">
 						<i class="login__icon fas fa-map-marker-alt"></i>
 						<input asp-for="Address" class="login__input form-control" />
@@ -204,7 +204,7 @@ body {
 					</div>
 				</div>
 				<button type="submit" class="button login__submit btn btn-primary">
-					<span class="button__text">Create Account</span>
+					<span class="button__text">Yeni Kayıt</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>
 			</form>

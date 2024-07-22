@@ -173,22 +173,22 @@
 				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input asp-for="UserName" class="login__input" placeholder="UserName">
+					<input asp-for="UserName" class="login__input" placeholder="Kullanıcı Adı">
 					<span asp-validation-for="UserName" class="text-danger"></span>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input asp-for="Password" class="login__input" placeholder="Password">
+					<input asp-for="Password" class="login__input" placeholder="Şifre">
 					<span asp-validation-for="Password" class="text-danger"></span>
 				</div>
 				<div class="checkbox mb-3">
 					<label asp-for="RememberMe" class="form-label">
 						<input asp-for="RememberMe" class="form-check-input" />
-						RememberMe
+						Beni Hatırla
 					</label>
 				</div>
 				<button type="submit" class="button login__submit">
-					<span class="button__text">Giriş ></span>
+					<span class="button__text">Giriş </span>
 				</button>
 			</form>
 			<div class="kayit">
